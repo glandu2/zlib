@@ -338,6 +338,12 @@
 #  endif
 #endif
 
+#if defined(__unix__)
+#  ifdef ZLIB_DLL
+#    define ZEXTERN extern __attribute__((visibility("default")))
+#  endif  /* ZLIB_DLL */
+#endif
+
 #if defined (__BEOS__)
 #  ifdef ZLIB_DLL
 #    ifdef ZLIB_INTERNAL
