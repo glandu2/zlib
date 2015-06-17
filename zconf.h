@@ -338,7 +338,7 @@
 #  endif
 #endif
 
-#if defined(__unix__)
+#if defined(__unix__) || defined(__APPLE__)
 #  ifdef ZLIB_DLL
 #    define ZEXTERN extern __attribute__((visibility("default")))
 #  endif  /* ZLIB_DLL */
