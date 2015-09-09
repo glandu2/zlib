@@ -35,5 +35,5 @@ add_library(${TARGET_NAME} ${SOURCE_FILES})
 if(BUILD_SHARED_LIBS)
   install(TARGETS ${TARGET_NAME}
         RUNTIME DESTINATION ./
-        LIBRARY DESTINATION ./)
+        LIBRARY DESTINATION ./ COMPONENT "binaries")
 endif()
