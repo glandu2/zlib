@@ -26,7 +26,7 @@ set(SOURCE_FILES
 )
 
 add_library(${TARGET_NAME} ${SOURCE_FILES})
-target_include_directories(${TARGET_NAME} PUBLIC .)
+target_include_directories(${TARGET_NAME} PUBLIC ".")
 if(BUILD_SHARED_LIBS)
   target_compile_definitions(${TARGET_NAME} PUBLIC ZLIB_DLL)
 endif()
