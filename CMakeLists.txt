@@ -1,11 +1,6 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8.12)
 
 set(TARGET_NAME "z")
-set(Z_INCLUDE "${CMAKE_CURRENT_LIST_DIR}" CACHE STRING "zlib include directory")
-
-if(BUILD_SHARED_LIBS)
-  add_definitions(-DZLIB_DLL)
-endif()
 
 set(SOURCE_FILES
   adler32.c
@@ -31,6 +26,10 @@ set(SOURCE_FILES
 )
 
 add_library(${TARGET_NAME} ${SOURCE_FILES})
+target_include_directories(${TARGET_NAME} PUBLIC .)
+if(BUILD_SHARED_LIBS)
+  target_compile_definitions(${TARGET_NAME} PUBLIC ZLIB_DLL)
+endif()
 
 if(BUILD_SHARED_LIBS)
   install(TARGETS ${TARGET_NAME}
