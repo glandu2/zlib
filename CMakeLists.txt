@@ -37,3 +37,5 @@ if(BUILD_SHARED_LIBS)
         RUNTIME DESTINATION ./
         LIBRARY DESTINATION ./)
 endif()
+
+set_target_properties(${TARGET_NAME} PROPERTIES UNITY_BUILD OFF)
